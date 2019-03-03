@@ -1,0 +1,95 @@
+// Import
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i');
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i');
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i');
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Serif:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i');
+
+// Variables
+@import 'variables';
+
+// Structure
+*{
+    font-family: $font-family-sans-serif;
+    line-height: $line-height-base;
+}
+
+body{
+	min-height: 100%;
+    background-color: $body-bg;
+    color: $body-color;
+}
+
+.container{
+    max-width: 960px;
+    margin: 0 auto;
+    width: 80%;
+}
+
+hr{
+    border: 0;
+    border-bottom: 1px solid #ddd;
+    margin: $spacer 0;
+}
+
+pre{
+    background: $body-bg;
+    padding: $spacer;
+    margin: $spacer 0;
+    font-family: $font-family-mono;
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6{
+    margin: $spacer 0;
+}
+
+h1{
+    font-size: $font-size-base * 2;
+    font-weight: 600;
+}
+
+h2{
+    font-size: $font-size-base * 1.8;
+}
+
+h3{
+    font-size: $font-size-base * 1.6;
+}
+
+h4{
+    font-size: $font-size-base * 1.4;
+}
+
+h5{
+    font-size: $font-size-base * 1.2;
+}
+
+h6{
+    font-size: $font-size-base;
+}
+
+p{
+    font-size: $font-size-base;
+    margin: 0;
+    margin-bottom: $spacer;
+    line-height: $line-height-base;
+}
+
+// Elements
+.card{
+    background: $card-bg;
+    color: $card-color;
+    padding: $spacer;
+    margin-bottom: $spacer;
+}
+
+.btn{
+    border: 2px solid $primary;
+    background: transparent;
+    color: $primary;
+    padding: $spacer/2 $spacer*2;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+}

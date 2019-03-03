@@ -1,0 +1,35 @@
+{
+  "name": "nova.css",
+  "version": "1.0.0",
+  "description": "Super simple and light CSS framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://andrearufo@github.com/andrearufo/nova.css.git"
+  },
+  "keywords": [
+    "css",
+    "frontend",
+    "framework",
+    "sass",
+    "scss",
+    "responsive"
+  ],
+  "author": "Andrea Rufo <info@andrearufo.it>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrearufo/nova.css/issues"
+  },
+  "homepage": "https://github.com/andrearufo/nova.css#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.4.9",
+    "cssnano": "^4.1.10",
+    "gulp": "^4.0.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "node-sass": "^4.11.0"
+  }
+}
