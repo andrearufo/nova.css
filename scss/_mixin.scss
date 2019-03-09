@@ -1,0 +1,12 @@
+// Mixin for responsive
+@mixin responsive($size) {
+    @if $size == large {
+        @media (min-width: $breakpoint) {
+            @content;
+        }
+    } @else {
+        @media (max-width: $breakpoint) {
+            @content;
+        }
+    }
+}

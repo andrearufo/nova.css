@@ -1,1 +1,277 @@
-@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Mono:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i");@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i");@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i");@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Serif:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i");*{font-family:IBM Plex Sans,sans-serif;line-height:1.6}body{min-height:100%;background-color:#f2f2f2;color:#333}.container{max-width:960px;margin:0 auto;width:80%}hr{border:0;border-bottom:1px solid #ddd}hr,pre{margin:2rem 0}pre{background:#f2f2f2;padding:2rem;font-family:IBM Plex Mono,monospace}h1,h2,h3,h4,h5,h6{margin:2rem 0}h1{font-size:2rem;font-weight:600}h2{font-size:1.8rem}h3{font-size:1.6rem}h4{font-size:1.4rem}h5{font-size:1.2rem}h6,p{font-size:1rem}p{margin:0 0 2rem;line-height:1.6}.card{background:#fff;color:#333;padding:2rem;margin-bottom:2rem}.btn{border:2px solid #2e2e2e;background:transparent;color:#2e2e2e;padding:1rem 4rem;cursor:pointer;text-decoration:none;font-weight:700}
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
+@import url("https://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu:400,400i,700,700i");
+@import url("https://rsms.me/raster/raster.grid.css?v=6");
+@media (min-width: 768px) {
+  .text-left-large {
+    text-align: left !important; } }
+
+@media (max-width: 768px) {
+  .text-left-small {
+    text-align: left !important; } }
+
+.text-left {
+  text-align: left; }
+
+@media (min-width: 768px) {
+  .text-center-large {
+    text-align: center !important; } }
+
+@media (max-width: 768px) {
+  .text-center-small {
+    text-align: center !important; } }
+
+.text-center {
+  text-align: center; }
+
+@media (min-width: 768px) {
+  .text-right-large {
+    text-align: right !important; } }
+
+@media (max-width: 768px) {
+  .text-right-small {
+    text-align: right !important; } }
+
+.text-right {
+  text-align: right; }
+
+@media (min-width: 768px) {
+  .float-left-large {
+    float: left !important; } }
+
+@media (max-width: 768px) {
+  .float-left-small {
+    float: left !important; } }
+
+.float-left {
+  float: left; }
+
+@media (min-width: 768px) {
+  .float-none-large {
+    float: none !important; } }
+
+@media (max-width: 768px) {
+  .float-none-small {
+    float: none !important; } }
+
+.float-none {
+  float: none; }
+
+@media (min-width: 768px) {
+  .float-right-large {
+    float: right !important; } }
+
+@media (max-width: 768px) {
+  .float-right-small {
+    float: right !important; } }
+
+.float-right {
+  float: right; }
+
+@media (min-width: 768px) {
+  .display-none-large {
+    display: none !important; } }
+
+@media (max-width: 768px) {
+  .display-none-small {
+    display: none !important; } }
+
+.display-none {
+  display: none; }
+
+@media (min-width: 768px) {
+  .display-block-large {
+    display: block !important; } }
+
+@media (max-width: 768px) {
+  .display-block-small {
+    display: block !important; } }
+
+.display-block {
+  display: block; }
+
+* {
+  font-family: "Ubuntu", sans-serif;
+  line-height: 1.8; }
+  *, *::before, *::after {
+    box-sizing: border-box; }
+
+body {
+  min-height: 100%;
+  background-color: #ffffff;
+  color: #333333; }
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  width: 80%; }
+
+hr {
+  border: 0;
+  border-bottom: 1px #eaeaea solid;
+  margin: 2rem 0; }
+
+pre {
+  background: #f3f4f4;
+  color: #1abc9c;
+  padding: 2rem;
+  margin: 2rem 0;
+  font-family: "Ubuntu Mono", monospace;
+  overflow-x: scroll; }
+
+img {
+  max-width: 100%;
+  height: auto; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 4rem 0 2rem 0;
+  color: #34495e;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: bold; }
+
+h1 {
+  font-size: 2rem;
+  font-weight: 600; }
+
+h2 {
+  font-size: 1.8rem; }
+
+h3 {
+  font-size: 1.6rem; }
+
+h4 {
+  font-size: 1.4rem; }
+
+h5 {
+  font-size: 1.2rem; }
+
+h6 {
+  font-size: 1rem; }
+
+p {
+  font-size: 1rem;
+  margin: 0;
+  margin-bottom: 1rem;
+  line-height: 1.8; }
+
+ul, ol, dl {
+  font-size: 1rem;
+  margin: 1rem 0; }
+
+dl dt {
+  font-weight: bold;
+  padding-right: 2rem; }
+
+dl dd {
+  margin-left: 2rem; }
+
+a {
+  color: #1abc9c;
+  text-decoration: underline;
+  transition: all .2s; }
+  a:hover {
+    color: #0e6252; }
+
+code {
+  font-family: "Ubuntu Mono", monospace;
+  background: #f3f4f4;
+  color: #34495e; }
+
+small {
+  font-size: 0.7rem; }
+
+.card {
+  background: #f3f4f4;
+  padding: 2rem;
+  margin: 2rem 0;
+  border-radius: 2rem; }
+
+.btn {
+  cursor: pointer;
+  border: 1px #eaeaea solid;
+  border-color: #1abc9c;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  text-decoration: none;
+  transition: all .2s;
+  background: #1abc9c;
+  color: #ffffff; }
+  .btn.btn-outline {
+    color: #1abc9c;
+    background: white; }
+  .btn.btn-ghost {
+    border: 0;
+    background: white;
+    color: #1abc9c;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12); }
+  .btn:hover {
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.12); }
+
+header, footer {
+  margin: 2rem 0;
+  padding: 2rem 0; }
+
+header {
+  border-bottom: 1px #eaeaea solid;
+  margin-top: 0; }
+  header h5 {
+    margin: 0;
+    padding: 1rem 0; }
+
+footer {
+  border-top: 1px #eaeaea solid;
+  margin-bottom: 0;
+  color: #cccccc; }
+
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-flow: row nowrap; }
+  header nav > *:not(:last-child) {
+    margin-right: 2rem; }
+  header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; }
+    header nav ul > li:not(:last-child) {
+      margin-right: 2rem; }
+
+header.stiky {
+  position: -webkit-sticky;
+  position: sticky;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background: white;
+  z-index: 999;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12); }
+
+fieldset {
+  border: 0;
+  padding: 0; }
+
+input[type="text"],
+input[type="email"],
+input[type="search"],
+textarea,
+select {
+  border: 1px #eaeaea solid;
+  padding: 1rem 2rem;
+  display: block;
+  width: 100%;
+  border-radius: 2rem;
+  background: white; }
+
+select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  position: relative; }
+
+label {
+  padding-left: 2rem; }
+
+/*# sourceMappingURL=nova.css.map */

@@ -1,0 +1,62 @@
+// Test align
+@each $a in left, center, right{
+
+    .text-#{$a}-large {
+        @include responsive(large){
+            text-align: $a !important;
+        }
+    }
+
+    .text-#{$a}-small {
+        @include responsive(small){
+            text-align: $a !important;
+        }
+    }
+
+    .text-#{$a}{
+        text-align: $a;
+    }
+
+}
+
+// Float
+@each $f in left, none, right{
+
+    .float-#{$f}-large {
+        @include responsive(large){
+            float: $f !important;
+        }
+    }
+
+    .float-#{$f}-small {
+        @include responsive(small){
+            float: $f !important;
+        }
+    }
+
+    .float-#{$f}{
+        float: $f;
+    }
+
+}
+
+// Display
+@each $a in none, block{
+
+    .display-#{$a}-large {
+        @include responsive(large){
+            display: $a !important;
+        }
+    }
+
+    .display-#{$a}-small {
+        @include responsive(small){
+            display: $a !important;
+        }
+    }
+
+    .display-#{$a}{
+        display: $a;
+    }
+
+}

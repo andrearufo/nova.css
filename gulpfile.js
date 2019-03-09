@@ -1,40 +1,60 @@
-// Plugins
-var gulp = require("gulp"),
-    sass = require("gulp-sass"),
-    postcss = require("gulp-postcss"),
-    autoprefixer = require("autoprefixer"),
-    cssnano = require("cssnano");
-
-
-
-// The paths of the folders
 var paths = {
     styles: {
-        src: "scss/**/*.scss",
-        dest: "css"
+        src: 'scss/**/*.scss',
+        dest: 'css'
     }
 };
 
+var gulp = require('gulp'),
+    sass = require('gulp-sass'),
+    size = require('gulp-size'),
+    postcss = require('gulp-postcss'),
+    concat = require('gulp-concat'),
+    autoprefixer = require('autoprefixer'),
+    sourcemaps = require('gulp-sourcemaps'),
+    cssnano = require('cssnano'),
+    log = require('fancy-log');
 
-
-// Style task
 function style() {
+    log.info('Starting style!');
     return (
         gulp
             .src(paths.styles.src)
-            .pipe(sass())
-            .on("error", sass.logError)
-            .pipe(postcss([autoprefixer(), cssnano()]))
+            .pipe(sourcemaps.init())
+            .pipe(sass().on('error', sass.logError))
+            .pipe(postcss([autoprefixer()]))
+            .pipe(sourcemaps.write('.'))
+            .pipe(size())
             .pipe(gulp.dest(paths.styles.dest))
     );
 }
 exports.style = style;
 
-
-
-// Watch task
-function watch(){
-    style();
-    gulp.watch(paths.styles.src, style)
+function minify() {
+    log.info('Starting minify!');
+    return (
+        gulp
+            .src(paths.styles.dest+'/nova.css')
+            .pipe(sourcemaps.init())
+            .pipe(postcss([cssnano()]))
+            .pipe(size())
+            .pipe(size({
+                gzip: true
+            }))
+            .pipe(concat('style.min.css'))
+            .pipe(sourcemaps.write('.'))
+            .pipe(gulp.dest(paths.styles.dest))
+    );
 }
-exports.watch = watch
+exports.minify = minify;
+
+function watch(){
+    log.info('Starting watch!');
+    gulp.watch(paths.styles.src, gulp.series('style', 'minify'))
+}
+exports.watch = watch;
+
+function start(){
+    watch();
+}
+exports.default = start;

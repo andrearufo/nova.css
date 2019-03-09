@@ -1,23 +1,65 @@
-// Import
-@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
-@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i');
-@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i');
-@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i');
-@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Serif:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i');
-
 // Variables
-@import 'variables';
+$body:                white;
+$primary:             #1abc9c; //#508cee; //#663399; // #007aff;
+$dark:                darken($primary, 20%);
+$color:               #333333;
+$light:               lighten($color, 60%);
+$background:          #f3f4f4; // #fafbfc;
+$heading:             #34495e;
+
+$border:              1px #eaeaea solid;
+
+// $font-sans:           'Roboto', sans-serif;
+// $font-mono:           'Roboto Mono', monospace;
+$font-sans:           'Ubuntu', sans-serif;
+$font-mono:           'Ubuntu Mono', monospace;
+
+$font-size-base:      1rem;
+$line-height-base:    1.8;
+
+$spacer:              2rem;
+$breakpoint:          768px;
+$padding:             $spacer/2 $spacer;
+
+
+// Reset
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
+
+
+
+// Fonts
+// @import url('https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:400,400i,700,700i');
+// @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:400,400i,700,700i');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu:400,400i,700,700i');
+
+
+
+// Grid
+@import url('https://rsms.me/raster/raster.grid.css?v=6');
+@import 'grid';
+
+
+
+// Mixin
+@import 'mixin';
+@import 'utility';
+
+
 
 // Structure
 *{
-    font-family: $font-family-sans-serif;
+    font-family: $font-sans;
     line-height: $line-height-base;
+
+    &, &::before, &::after {
+        box-sizing: border-box;
+    }
 }
 
 body{
 	min-height: 100%;
-    background-color: $body-bg;
-    color: $body-color;
+    background-color: #ffffff;
+    color: $color;
 }
 
 .container{
@@ -28,20 +70,32 @@ body{
 
 hr{
     border: 0;
-    border-bottom: 1px solid #ddd;
+    border-bottom: $border;
     margin: $spacer 0;
 }
 
 pre{
-    background: $body-bg;
+    background: $background;
+    color: $primary;
     padding: $spacer;
     margin: $spacer 0;
-    font-family: $font-family-mono;
+    font-family: $font-mono;
+    overflow-x: scroll;
 }
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+
 
 // Typography
 h1, h2, h3, h4, h5, h6{
-    margin: $spacer 0;
+    margin: $spacer*2 0 $spacer 0;
+    color: $heading;
+    font-family: $font-sans;
+    font-weight: bold;
 }
 
 h1{
@@ -72,24 +126,178 @@ h6{
 p{
     font-size: $font-size-base;
     margin: 0;
-    margin-bottom: $spacer;
+    margin-bottom: $spacer/2;
     line-height: $line-height-base;
 }
 
+ul, ol, dl{
+    font-size: $font-size-base;
+    margin: $spacer/2 0;
+}
+
+dl{
+    dt{
+        font-weight: bold;
+        padding-right: $spacer;
+    }
+
+    dd{
+        margin-left: $spacer;
+    }
+}
+
+a{
+    color: $primary;
+    text-decoration: underline;
+    transition: all .2s;
+
+    &:hover{
+        color: $dark;
+    }
+}
+
+code{
+    font-family: $font-mono;
+    background: $background;
+    color: $heading;
+}
+
+small{
+    font-size: $font-size-base*0.7;
+}
+
+
+
 // Elements
 .card{
-    background: $card-bg;
-    color: $card-color;
+    background: $background;
     padding: $spacer;
-    margin-bottom: $spacer;
+    margin: $spacer 0;
+    border-radius: $spacer;
 }
 
 .btn{
-    border: 2px solid $primary;
-    background: transparent;
-    color: $primary;
-    padding: $spacer/2 $spacer*2;
     cursor: pointer;
+    border: $border;
+    border-color: $primary;
+    padding: $padding;
+    border-radius: $spacer;
     text-decoration: none;
-    font-weight: bold;
+    transition: all .2s;
+    background: $primary;
+
+    @if (lightness($primary) > 50) {
+        color: #000000;
+    } @else {
+        color: #ffffff;
+    }
+
+    &.btn-outline{
+        color: $primary;
+        background: $body;
+    }
+
+    &.btn-ghost{
+        // Omage for https://open.spotify.com/artist/1Qp56T7n950O3EGMsSl81D
+        border: 0;
+        background: $body;
+        color: $primary;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.12);
+    }
+
+    &:hover{
+        box-shadow: 0 7px 20px rgba(0,0,0,0.12);
+    }
+}
+
+header, footer{
+    margin: $spacer 0;
+    padding: $spacer 0;
+}
+
+header{
+    border-bottom: $border;
+    margin-top: 0;
+
+    h5{
+        margin: 0;
+        padding: $spacer/2 0;
+    }
+}
+
+footer{
+    border-top: $border;
+    margin-bottom: 0;
+    color: $light;
+}
+
+
+
+// Header
+header{
+    nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-flow: row nowrap;
+
+        > *:not(:last-child){
+            margin-right: $spacer;
+        }
+
+        ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+            > li{
+                &:not(:last-child){
+                    margin-right: $spacer;
+                }
+            }
+        }
+    }
+
+    &.stiky{
+        position: sticky;
+        left: 0;
+        top: 0;
+        width: 100%;
+        background: $body;
+        z-index: 999;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.12);
+    }
+}
+
+
+
+// Forms
+fieldset{
+    border: 0;
+    padding: 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="search"],
+textarea,
+select{
+    border: $border;
+    padding: $padding;
+    display: block;
+    width: 100%;
+    border-radius: $spacer;
+    background: $body;
+}
+
+select{
+    appearance: none;
+    position: relative;
+}
+
+label{
+    padding-left: $spacer;
 }
