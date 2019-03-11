@@ -1,16 +1,14 @@
 // Variables
 $body:                white;
-$primary:             #1abc9c; //#508cee; //#663399; // #007aff;
+$primary:             #1abc9c;
 $dark:                darken($primary, 20%);
 $color:               #333333;
 $light:               lighten($color, 60%);
-$background:          #f3f4f4; // #fafbfc;
+$background:          #f3f4f4;
 $heading:             #34495e;
 
 $border:              1px #eaeaea solid;
-
-// $font-sans:           'Roboto', sans-serif;
-// $font-mono:           'Roboto Mono', monospace;
+$columns:             12;
 $font-sans:           'Ubuntu', sans-serif;
 $font-mono:           'Ubuntu Mono', monospace;
 
@@ -28,21 +26,18 @@ $padding:             $spacer/2 $spacer;
 
 
 // Fonts
-// @import url('https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:400,400i,700,700i');
-// @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:400,400i,700,700i');
 @import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu:400,400i,700,700i');
-
-
-
-// Grid
-@import url('https://rsms.me/raster/raster.grid.css?v=6');
-@import 'grid';
 
 
 
 // Mixin
 @import 'mixin';
 @import 'utility';
+
+
+
+// Grid
+@import 'grid';
 
 
 
@@ -194,7 +189,7 @@ small{
 
     &.btn-outline{
         color: $primary;
-        background: $body;
+        background: transparent;
     }
 
     &.btn-ghost{
@@ -215,16 +210,6 @@ header, footer{
     padding: $spacer 0;
 }
 
-header{
-    border-bottom: $border;
-    margin-top: 0;
-
-    h5{
-        margin: 0;
-        padding: $spacer/2 0;
-    }
-}
-
 footer{
     border-top: $border;
     margin-bottom: 0;
@@ -235,25 +220,90 @@ footer{
 
 // Header
 header{
-    nav{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-flow: row nowrap;
+    border-bottom: $border;
+    margin-top: 0;
 
-        > *:not(:last-child){
-            margin-right: $spacer;
+    nav{
+        @include responsive(large){
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            flex-flow: row nowrap;
+
+            > *:not(:last-child){
+                margin-right: $spacer;
+            }
+        }
+
+        .hamburger{
+            @include responsive(large){
+                display: none;
+            }
+
+            float: right;
+            position: relative;
+            width: $spacer;
+            height: $spacer/2;
+            margin-top: $spacer*0.8;
+
+            span{
+                position: absolute;
+                height: 2px;
+                border-radius: 2px;
+                background: $primary;
+                transition: all .2s;
+
+                &:nth-child(1){
+                    left: 0;
+                    top: 0;
+                    width: 50%;
+                }
+
+                &:nth-child(2){
+                    left: 0;
+                    top: calc(50% - 1px);
+                    width: 100%;
+                }
+
+                &:nth-child(3){
+                    right: 0;
+                    bottom: 0;
+                    width: 50%;
+                }
+            }
+
+            &:focus{
+                span{
+                    width: 100%;
+                }
+            }
+        }
+
+        h5{
+            margin: 0;
+            padding: $spacer/2 0;
         }
 
         ul{
+            display: none;
             list-style: none;
             margin: 0;
             padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
+
+            @include responsive(large){
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+            }
 
             > li{
+                margin-bottom: $spacer/2;
+
+                @include responsive(large){
+                    margin-bottom: 0;
+                }
+
                 &:not(:last-child){
                     margin-right: $spacer;
                 }
@@ -278,6 +328,11 @@ header{
 fieldset{
     border: 0;
     padding: 0;
+}
+
+::placeholder {
+  color: $background;
+  opacity: 1;
 }
 
 input[type="text"],

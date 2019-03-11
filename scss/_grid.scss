@@ -1,0 +1,30 @@
+// @import url('https://rsms.me/raster/raster.grid.css?v=6');
+
+$gutter: $spacer/2;
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -$gutter;
+    margin-left: -$gutter;
+
+    &.row-vertical-center{
+        align-items: center;
+    }
+}
+
+
+.col{
+    position: relative;
+    padding-left: $gutter;
+    padding-right: $gutter;
+
+    flex: 0 0 100%;
+    max-width: 100%;
+    width: 100%;
+
+    @include responsive(large){
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}

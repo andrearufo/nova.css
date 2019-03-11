@@ -1,6 +1,5 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
 @import url("https://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu:400,400i,700,700i");
-@import url("https://rsms.me/raster/raster.grid.css?v=6");
 @media (min-width: 768px) {
   .text-left-large {
     text-align: left !important; } }
@@ -88,6 +87,26 @@
 
 .display-block {
   display: block; }
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -1rem;
+  margin-left: -1rem; }
+  .row.row-vertical-center {
+    align-items: center; }
+
+.col {
+  position: relative;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  flex: 0 0 100%;
+  max-width: 100%;
+  width: 100%; }
+  @media (min-width: 768px) {
+    .col {
+      flex: 0 0 50%;
+      max-width: 50%; } }
 
 * {
   font-family: "Ubuntu", sans-serif;
@@ -197,7 +216,7 @@ small {
   color: #ffffff; }
   .btn.btn-outline {
     color: #1abc9c;
-    background: white; }
+    background: transparent; }
   .btn.btn-ghost {
     border: 0;
     background: white;
@@ -210,48 +229,101 @@ header, footer {
   margin: 2rem 0;
   padding: 2rem 0; }
 
-header {
-  border-bottom: 1px #eaeaea solid;
-  margin-top: 0; }
-  header h5 {
-    margin: 0;
-    padding: 1rem 0; }
-
 footer {
   border-top: 1px #eaeaea solid;
   margin-bottom: 0;
   color: #cccccc; }
 
-header nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-flow: row nowrap; }
-  header nav > *:not(:last-child) {
-    margin-right: 2rem; }
+header {
+  border-bottom: 1px #eaeaea solid;
+  margin-top: 0; }
+  @media (min-width: 768px) {
+    header nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      flex-flow: row nowrap; }
+      header nav > *:not(:last-child) {
+        margin-right: 2rem; } }
+  header nav .hamburger {
+    float: right;
+    position: relative;
+    width: 2rem;
+    height: 1rem;
+    margin-top: 1.6rem; }
+    @media (min-width: 768px) {
+      header nav .hamburger {
+        display: none; } }
+    header nav .hamburger span {
+      position: absolute;
+      height: 2px;
+      border-radius: 2px;
+      background: #1abc9c;
+      transition: all .2s; }
+      header nav .hamburger span:nth-child(1) {
+        left: 0;
+        top: 0;
+        width: 50%; }
+      header nav .hamburger span:nth-child(2) {
+        left: 0;
+        top: calc(50% - 1px);
+        width: 100%; }
+      header nav .hamburger span:nth-child(3) {
+        right: 0;
+        bottom: 0;
+        width: 50%; }
+    header nav .hamburger:focus span {
+      width: 100%; }
+  header nav h5 {
+    margin: 0;
+    padding: 1rem 0; }
   header nav ul {
+    display: none;
     list-style: none;
     margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; }
-    header nav ul > li:not(:last-child) {
-      margin-right: 2rem; }
-
-header.stiky {
-  position: -webkit-sticky;
-  position: sticky;
-  left: 0;
-  top: 0;
-  width: 100%;
-  background: white;
-  z-index: 999;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12); }
+    padding: 0; }
+    @media (min-width: 768px) {
+      header nav ul {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start; } }
+    header nav ul > li {
+      margin-bottom: 1rem; }
+      @media (min-width: 768px) {
+        header nav ul > li {
+          margin-bottom: 0; } }
+      header nav ul > li:not(:last-child) {
+        margin-right: 2rem; }
+  header.stiky {
+    position: -webkit-sticky;
+    position: sticky;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: white;
+    z-index: 999;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12); }
 
 fieldset {
   border: 0;
   padding: 0; }
+
+::-webkit-input-placeholder {
+  color: #f3f4f4;
+  opacity: 1; }
+
+:-ms-input-placeholder {
+  color: #f3f4f4;
+  opacity: 1; }
+
+::-ms-input-placeholder {
+  color: #f3f4f4;
+  opacity: 1; }
+
+::placeholder {
+  color: #f3f4f4;
+  opacity: 1; }
 
 input[type="text"],
 input[type="email"],

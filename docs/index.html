@@ -6,7 +6,27 @@
     <title>Nova.css, a supersimple CSS framework</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="https://gitcdn.xyz/repo/andrearufo/nova.css/master/css/style.min.css">
+    <!-- <link rel="stylesheet" href="https://rawcdn.githack.com/andrearufo/nova.css/102e444863b5db2528b7423731277f67eed21e97/css/style.min.css"> -->
+    <link rel="stylesheet" href="../css/nova.css">
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <style media="screen">
+        header h5 img.logo{
+            height: 16px;
+        }
+
+        main img.logo{
+            width: 40%;
+        }
+
+        .col-inside{
+            background: rgba(0,0,0,.1);
+            border: 1px solid rgba(0,0,0,.4);
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
 
 </head>
 <body>
@@ -15,15 +35,26 @@
         <div class="container">
 
             <nav>
-                <h5>Nova.css</h5>
-                <ul class="display-none-small">
-                    <li>andrearufo.it</li>
-                    <li>GitHub</li>
-                    <li>Coffè</li>
+                <button class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <h5>
+                    <img src="novalogo.svg" class="logo">
+                    Nova.css
+                </h5>
+
+                <ul>
+                    <li><a href="https://www.andrearufo.it" target="_blank">andrearufo.it</a></li>
+                    <li><a href="https://github.com/andrearufo/nova.css" target="_blank">GitHub</a></li>
+                    <li class="display-none display-block-large">
+                        <form action="#">
+                            <input type="search" name="s" value="Search...">
+                        </form>
+                    </li>
                 </ul>
-                <form action="#">
-                    <input type="search" name="s" value="Search...">
-                </form>
             </nav>
 
         </div>
@@ -32,10 +63,14 @@
     <main>
         <div class="container">
 
-            <h1>Nova.css</h1>
+            <div class="text-center">
+                <img src="novalogo.svg" class="logo">
+                <h1>Nova.css</h1>
+                <p>Welcome to <strong>Nova.css</strong>.</p>
+                <p>Nova.css is an(other) simple and minimalistic CSS framework for your webpages. <br> Made in pure <a href="https://sass-lang.com/" target="_blank">SCSS</a> and compiled with <a href="https://gulpjs.com/" target="_blank">Gulp</a>.</p>
+            </div>
 
-            <p>Welcome to nova.css home page.</p>
-            <p>Nova.css is an(other) simple and minimalistic CSS framework for your webpages. Made in pure <a href="https://sass-lang.com/" target="_blank">SCSS</a> and compiled with <a href="https://gulpjs.com/" target="_blank">Gulp</a>.</p>
+            <hr>
 
             <h3>Typography</h3>
 
@@ -152,11 +187,79 @@
                     </div>
 
                     <p>
-                        <input class="btn" type="submit" value="Send">
+                        <input class="btn btn-outline" type="submit" value="Send">
                     </p>
 
                 </fieldset>
             </form>
+
+            <h3>Responsive</h3>
+
+            <p>Nova has only one breakpoint at <code>768px</code>: under is a "small" device; upper is a "large" device.</p>
+
+            <h3>Grid</h3>
+
+            <p>Nova.css has a simple grid system... not much options but functional</p>
+
+            <div class="row">
+                <div class="col">
+
+                    <div class="col-inside">Nova.css</div>
+
+                </div>
+                <div class="col">
+
+                    <div class="col-inside">Nova.css</div>
+
+                </div>
+            </div>
+
+            <div class="row row-vertical-center">
+                <div class="col">
+
+                    <div class="col-inside">
+                        <div class="row">
+                            <div class="col">
+
+                                <div class="col-inside">Nova.css</div>
+
+                            </div>
+                            <div class="col">
+
+                                <div class="col-inside">Nova.css</div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col">
+
+                    <div class="col-inside">Nova.css</div>
+
+                </div>
+            </div>
+
+            <p>Every coloumn works with a width of 50% on large devices and with a 100% on small devices. Use these classes:</p>
+
+            <ul>
+                <li><code>.row</code> to make a row to contain coloumns;</li>
+                <li><code>.col</code> to make a coloumn inside a row;</li>
+                <li><code>.row.row-vertical-center</code> to align coloumns vertically centered;</li>
+            </ul>
+
+            <p>and... that's all folks!</p>
+
+            <hr>
+
+            <h2>Kudos</h2>
+
+            <ul>
+                <li>https://raw.githack.com/</li>
+                <li>https://milligram.io/</li>
+                <li>https://kbrsh.github.io/wing/</li>
+                <li>https://getbootstrap.com/</li>
+            </ul>
 
         </div>
     </main>
@@ -164,18 +267,18 @@
     <footer>
         <div class="container">
 
-            <grid columns="4">
-                <c span="2" span-s="row">
+            <div class="row">
+                <div class="col">
 
                     <div class="text-center text-left-large">Nova.css by Andrea Rufo</div>
 
-                </c>
-                <c span="2" span-s="row">
+                </div>
+                <div class="col">
 
                     <div class="text-center text-right-large">Made by Andrea Rufo</div>
 
-                </c>
-            </grid>
+                </div>
+            </div>
 
         </div>
     </footer>
