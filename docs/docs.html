@@ -6,31 +6,55 @@
     <title>Nova.css, a supersimple CSS framework</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- <link rel="stylesheet" href="https://rawcdn.githack.com/andrearufo/nova.css/102e444863b5db2528b7423731277f67eed21e97/css/style.min.css"> -->
     <link rel="stylesheet" href="../css/nova.css">
+    <link rel="shortcut icon" href="favicon.ico">
 
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script> -->
+    <style media="screen">
+        header h5 img.logo{
+            height: 16px;
+        }
+
+        main img.logo{
+            width: 40%;
+        }
+
+        .col-inside{
+            background: rgba(0,0,0,.1);
+            border: 1px solid rgba(0,0,0,.4);
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
 
 </head>
 <body>
-
 
     <header class="stiky">
         <div class="container">
 
             <nav>
-                <h5>Nova.css</h5>
-                <ul class="display-none-small">
-                    <li>andrearufo.it</li>
-                    <li>GitHub</li>
-                    <li>Coffè</li>
-                    <li>Docs</li>
-                </ul>
-                <form action="#">
-                    <input type="search" name="s" value="Search...">
-                </form>
+                <button class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
 
+                <h5>
+                    <img src="novalogo.svg" class="logo">
+                    Nova.css
+                </h5>
+
+                <ul>
+                    <li><a href="https://www.andrearufo.it" target="_blank">andrearufo.it</a></li>
+                    <li><a href="https://github.com/andrearufo/nova.css" target="_blank">GitHub</a></li>
+                    <li class="display-none display-block-large">
+                        <form action="#">
+                            <input type="search" name="s" value="Search...">
+                        </form>
+                    </li>
+                </ul>
             </nav>
 
         </div>
@@ -49,18 +73,18 @@
     <footer>
         <div class="container">
 
-            <grid columns="4">
-                <c span="2" span-s="row">
+            <div class="row">
+                <div class="col">
 
                     <div class="text-center text-left-large">Nova.css by Andrea Rufo</div>
 
-                </c>
-                <c span="2" span-s="row">
+                </div>
+                <div class="col">
 
                     <div class="text-center text-right-large">Made by Andrea Rufo</div>
 
-                </c>
-            </grid>
+                </div>
+            </div>
 
         </div>
     </footer>
