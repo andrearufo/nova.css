@@ -41,7 +41,7 @@ function minify() {
             .pipe(size({
                 gzip: true
             }))
-            .pipe(concat('style.min.css'))
+            .pipe(concat('nova.min.css'))
             .pipe(sourcemaps.write('.'))
             .pipe(gulp.dest(paths.styles.dest))
     );
