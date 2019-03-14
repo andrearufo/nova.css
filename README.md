@@ -1,4 +1,6 @@
-![Nova.css](https://andrearufo.github.io/nova.css/novalogo.png)
+<p align="center">
+  <img width="460" src="https://andrearufo.github.io/nova.css/novalogo.png">
+</p>
 
 # Nova.css
 
