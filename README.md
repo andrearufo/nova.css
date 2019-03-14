@@ -1,4 +1,4 @@
-![Nova.css](https://andrearufo.github.io/nova.css/novalogo.svg)
+![Nova.css](https://andrearufo.github.io/nova.css/novalogo.png)
 
 # Nova.css
 
@@ -101,10 +101,9 @@ In the header container you may use the  `<nav>` tag to organize:
 - `.btn.btn-outline` a simple button wit only the outline
 - `.btn.btn-ghost` a trasparent button like a ghost
 - `.hamburger` a simple and animated menu icon
-- `.text-{left, center, right}` to align text 
+- `.text-{left, center, right}` to align text
 - `.text-{left, center, right}-{large, small}` to align text in the breakpoint
 - `.float-{left, center, right}` for the float elements
 - `.float-{left, center, right}-{large, small}` for the float elements in the breakpoint
 - `.display-{none, block}` for display or hide elements
 - `.display-{none, block}-{large, small}` for display or hide elements in the breakpoint
-
