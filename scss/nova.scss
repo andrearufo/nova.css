@@ -5,12 +5,12 @@ $dark:                darken($primary, 20%);
 $color:               #333333;
 $light:               lighten($color, 60%);
 $background:          #f3f4f4;
-$heading:             #34495e;
+$heading:             #333333;
 
 $border:              1px #eaeaea solid;
 $columns:             12;
-$font-sans:           'Ubuntu', sans-serif;
-$font-mono:           'Ubuntu Mono', monospace;
+$font-sans:           'Fira Sans', sans-serif;
+$font-mono:           'Fira Mono', monospace;
 
 $font-size-base:      1rem;
 $line-height-base:    1.8;
@@ -20,13 +20,14 @@ $breakpoint:          768px;
 $padding:             $spacer/2 $spacer;
 
 
+
 // Reset
 @import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
 
 
 
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu:400,400i,700,700i');
+@import url('https://fonts.googleapis.com/css?family=Fira+Mono|Fira+Sans:400,400i,700,700i');
 
 
 
@@ -324,6 +325,35 @@ header{
 
 
 
+// Table
+table{
+    width: 100%;
+    border-spacing: 0;
+
+    thead{
+        > tr {
+            > th{
+                padding: $padding;
+                background: $background;
+                font-weight: bold;
+                text-align: left;
+                border-bottom: $border;
+            }
+        }
+    }
+
+    tbody{
+        > tr {
+            > td {
+                padding: $padding;
+                border-bottom: $border;
+            }
+        }
+    }
+}
+
+
+
 // Forms
 fieldset{
     border: 0;
@@ -355,4 +385,9 @@ select{
 
 label{
     padding-left: $spacer;
+}
+
+input[type="checkbox"] + label,
+input[type="radio"] + label{
+    padding: 0
 }
