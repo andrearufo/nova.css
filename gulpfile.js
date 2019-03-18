@@ -5,15 +5,23 @@ var paths = {
     }
 };
 
-var gulp = require('gulp'),
-    sass = require('gulp-sass'),
-    size = require('gulp-size'),
-    postcss = require('gulp-postcss'),
-    concat = require('gulp-concat'),
-    autoprefixer = require('autoprefixer'),
-    sourcemaps = require('gulp-sourcemaps'),
-    cssnano = require('cssnano'),
-    log = require('fancy-log');
+const pkg = require("./package.json");
+const comment = `/**
+ * Nova.css v${pkg.version}
+ * By Andrea Rufo, www.andrearufo.com
+ * https://andrearufo.github.io/nova.css/
+ */\r\n`;
+
+var gulp = require('gulp');
+var sass = require('gulp-sass');
+var size = require('gulp-size');
+var postcss = require('gulp-postcss');
+var concat = require('gulp-concat');
+var autoprefixer = require('autoprefixer');
+var sourcemaps = require('gulp-sourcemaps');
+var cssnano = require('cssnano');
+var header = require('gulp-header');
+var log = require('fancy-log');
 
 function style() {
     log.info('Starting style!');
@@ -23,6 +31,7 @@ function style() {
             .pipe(sourcemaps.init())
             .pipe(sass().on('error', sass.logError))
             .pipe(postcss([autoprefixer()]))
+            .pipe(header(comment + "\r\n"))
             .pipe(sourcemaps.write('.'))
             .pipe(size())
             .pipe(gulp.dest(paths.styles.dest))
