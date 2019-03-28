@@ -21,7 +21,7 @@ Here an example of basic structure:
     <title>Nova.css</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="https://rawcdn.githack.com/andrearufo/nova.css/102e444863b5db2528b7423731277f67eed21e97/css/style.min.css">
+    <link rel="stylesheet" href="css/nova.min.css">
     <link rel="shortcut icon" href="favicon.ico">
 
 </head>

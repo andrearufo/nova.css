@@ -257,7 +257,10 @@ header {
     position: relative;
     width: 2rem;
     height: 1rem;
-    margin-top: 1.6rem; }
+    margin: 0;
+    margin-top: 1.6rem;
+    border: 0;
+    padding: 0; }
     @media (min-width: 768px) {
       header nav .hamburger {
         display: none; } }
@@ -279,8 +282,10 @@ header {
         right: 0;
         bottom: 0;
         width: 50%; }
-    header nav .hamburger:focus span {
-      width: 100%; }
+    header nav .hamburger:hover, header nav .hamburger:focus, header nav .hamburger:active {
+      outline: 0; }
+      header nav .hamburger:hover span, header nav .hamburger:focus span, header nav .hamburger:active span {
+        width: 100%; }
   header nav h5 {
     margin: 0;
     padding: 1rem 0; }
