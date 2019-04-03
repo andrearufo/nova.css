@@ -9,10 +9,10 @@ $heading:             #333333;
 
 $border:              1px #eaeaea solid;
 $columns:             12;
-$font-sans:           'Fira Sans', sans-serif;
-$font-mono:           'Fira Mono', monospace;
+$font-sans:           'Inter', sans-serif;
+$font-mono:           'Fira Code', monospace;
 
-$font-size-base:      1rem;
+$font-size-base:      1.2rem;
 $line-height-base:    1.8;
 
 $spacer:              2rem;
@@ -27,7 +27,8 @@ $padding:             $spacer/2 $spacer;
 
 
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Fira+Mono|Fira+Sans:400,400i,700,700i');
+@import url('https://cdn.rawgit.com/tonsky/FiraCode/1.205/distr/fira_code.css');
+@import url('https://rsms.me/inter/inter.css');
 
 
 
@@ -45,6 +46,7 @@ $padding:             $spacer/2 $spacer;
 // Structure
 *{
     font-family: $font-sans;
+    font-weight: 400;
     line-height: $line-height-base;
 
     &, &::before, &::after {
@@ -68,6 +70,10 @@ hr{
     border: 0;
     border-bottom: $border;
     margin: $spacer 0;
+}
+
+code{
+    font-family: $font-mono;
 }
 
 pre{
@@ -117,6 +123,10 @@ h5{
 
 h6{
     font-size: $font-size-base;
+}
+
+.mute{
+    color: $light;
 }
 
 p{
@@ -250,6 +260,7 @@ header{
             margin-top: $spacer*0.8;
             border: 0;
             padding: 0;
+            background: transparent;
 
             span{
                 position: absolute;
@@ -279,7 +290,7 @@ header{
 
             &:hover, &:focus, &:active{
                 outline: 0;
-                
+
                 span{
                     width: 100%;
                 }
