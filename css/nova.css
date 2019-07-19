@@ -346,6 +346,10 @@ fieldset {
   color: #f3f4f4;
   opacity: 1; }
 
+::-moz-placeholder {
+  color: #f3f4f4;
+  opacity: 1; }
+
 :-ms-input-placeholder {
   color: #f3f4f4;
   opacity: 1; }
