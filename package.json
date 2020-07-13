@@ -27,7 +27,7 @@
     },
     "homepage": "https://andrearufo.github.io/nova.css",
     "devDependencies": {
-        "autoprefixer": "^9.7.6",
+        "autoprefixer": "^9.8.5",
         "cssnano": "^4.1.10",
         "fancy-log": "^1.3.3",
         "gulp": "^4.0.2",
