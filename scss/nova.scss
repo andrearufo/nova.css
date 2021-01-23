@@ -9,8 +9,8 @@ $heading:             #333333;
 
 $border:              1px #eaeaea solid;
 $columns:             12;
-$font-sans:           'Inter', sans-serif;
-$font-mono:           'Fira Code', monospace;
+$font-sans:           system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Oxygen, Cantarell, sans-serif;
+$font-mono:           monospace;
 
 $font-size-base:      1.2rem;
 $line-height-base:    1.8;
@@ -19,29 +19,15 @@ $spacer:              2rem;
 $breakpoint:          768px;
 $padding:             $spacer/2 $spacer;
 
-
-
 // Reset
 @import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
-
-
-
-// Fonts
-@import url('https://cdn.rawgit.com/tonsky/FiraCode/1.205/distr/fira_code.css');
-@import url('https://rsms.me/inter/inter.css');
-
-
 
 // Mixin
 @import 'mixin';
 @import 'utility';
 
-
-
 // Grid
 @import 'grid';
-
-
 
 // Structure
 *{

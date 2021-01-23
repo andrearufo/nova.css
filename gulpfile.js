@@ -13,7 +13,7 @@ const comment = `/**
  */\r\n`;
 
 var gulp = require('gulp');
-var sass = require('gulp-sass');
+var sass = require('gulp-dart-sass');
 var size = require('gulp-size');
 var postcss = require('gulp-postcss');
 var concat = require('gulp-concat');
