@@ -35,7 +35,7 @@
         "gulp-dart-sass": "^1.0.2",
         "gulp-header": "^2.0.9",
         "gulp-postcss": "^8.0.0",
-        "gulp-size": "^3.0.0",
+        "gulp-size": "^4.0.1",
         "gulp-sourcemaps": "^2.6.5",
         "node-sass": "^4.14.0"
     }
