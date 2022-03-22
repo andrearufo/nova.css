@@ -1,3 +1,5 @@
+@use "sass:math";
+
 // Variables
 $body:                white;
 $primary:             #1abc9c;
@@ -17,7 +19,7 @@ $line-height-base:    1.8;
 
 $spacer:              2rem;
 $breakpoint:          768px;
-$padding:             $spacer/2 $spacer;
+$padding:             math.div($spacer, 2) $spacer;
 
 // Reset
 @import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
@@ -118,13 +120,13 @@ h6{
 p{
     font-size: $font-size-base;
     margin: 0;
-    margin-bottom: $spacer/2;
+    margin-bottom: math.div($spacer, 2);
     line-height: $line-height-base;
 }
 
 ul, ol, dl{
     font-size: $font-size-base;
-    margin: $spacer/2 0;
+    margin: math.div($spacer, 2) 0;
 }
 
 dl{
@@ -241,7 +243,7 @@ header{
             float: right;
             position: relative;
             width: $spacer;
-            height: $spacer/2;
+            height: math.div($spacer, 2);
             margin: 0;
             margin-top: $spacer*0.8;
             border: 0;
@@ -285,7 +287,7 @@ header{
 
         h5{
             margin: 0;
-            padding: $spacer/2 0;
+            padding: math.div($spacer, 2) 0;
         }
 
         ul{
@@ -301,7 +303,7 @@ header{
             }
 
             > li{
-                margin-bottom: $spacer/2;
+                margin-bottom: math.div($spacer, 2);
 
                 @include responsive(large){
                     margin-bottom: 0;

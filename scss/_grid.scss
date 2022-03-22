@@ -1,6 +1,6 @@
 // @import url('https://rsms.me/raster/raster.grid.css?v=6');
 
-$gutter: $spacer/2;
+$gutter: math.div($spacer, 2);
 
 .row{
     display: flex;
